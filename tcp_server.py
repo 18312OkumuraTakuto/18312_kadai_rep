@@ -7,8 +7,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         conn, addr = s.accept()
         with conn:
             while True:
-                data = conn.(1024)
-                if not data
+                data = conn.recv(1024)
+                if not data:
                     break
                  print('data : {}, addr: {}'.format(data, addr))
                  conn.sendall(b'Received: ' + data)
